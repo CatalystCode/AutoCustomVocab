@@ -57,7 +57,7 @@ rm(lines)
 #sourcetext[[3]]$content
 
 # transformations
-removeSlash <- function(x) gsub("/", " ", x)
+#removeSlash <- function(x) gsub("/", " ", x)
 removeURL <- function(x) gsub("http:[[:alnum:]]*", "", x)
 sourcetext <- tm::tm_map(sourcetext, content_transformer(tolower))
 sourcetext <- tm::tm_map(sourcetext, removeNumbers)
@@ -113,7 +113,7 @@ dim(text_ngrams)
 #http://norvig.com/mayzner.html
 
 #Intake list of common vocabulary words
-#in this case, we're leveraging 100k most common words from 
+#in this case, we're leveraging 20k most common words from 
 #http://norvig.com/ngrams/ as republished here https://github.com/first20hours/google-10000-english
 fileName_words <- "20kwords.txt"
 conn1 <- file(fileName_words,open="r")
